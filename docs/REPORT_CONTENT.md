@@ -22,8 +22,6 @@ Antonio de Jesus Juarez Padilla
 
 ---
 
-> **Instrucción de maquetación.** Esta página corresponde a la portada. No debe agregarse campus, facultad o departamento porque esos datos no aparecen confirmados en los materiales proporcionados. En la versión final se utilizarán Times New Roman de 12 puntos, márgenes de 2.54 cm, interlineado de 1.5 y número de página en la esquina superior derecha, excepto en la portada. Los números del índice se actualizarán después de la última renderización.
-
 <!-- SALTO DE PÁGINA -->
 
 ## Criterio de evidencia y alcance del reporte
@@ -52,84 +50,7 @@ La aplicación auditada es un prototipo académico local. Incluye persistencia, 
 
 # Índice general
 
-> **Instrucción de maquetación.** Sustituir los marcadores por números reales después de generar la versión final; el índice debe convertirse en un campo actualizable del procesador de texto.
-
-1. Introducción ........................................................................ [página]
-2. Objetivos ............................................................................ [página]
-   2.1 Objetivo general ............................................................. [página]
-   2.2 Objetivos específicos ........................................................ [página]
-3. Justificación ........................................................................ [página]
-4. Proceso de diseño UX ................................................................. [página]
-   4.1 Evidencia disponible y método de análisis ..................................... [página]
-   4.2 Usuarios y necesidades ........................................................ [página]
-   4.3 Arquitectura de información ................................................... [página]
-   4.4 Flujos principales ............................................................ [página]
-   4.5 Decisiones de usabilidad y accesibilidad ...................................... [página]
-   4.6 Límites de la evaluación UX .................................................... [página]
-5. Interfaces y pantallas UI/UX ........................................................ [página]
-   5.1 Fundamentos visuales ........................................................... [página]
-   5.2 Sistema de componentes y Atomic Design ........................................ [página]
-   5.3 Autenticación y recuperación .................................................. [página]
-   5.4 Inicio y navegación global ..................................................... [página]
-   5.5 Jugadores y calendario ........................................................ [página]
-   5.6 Metas y rutinas ............................................................... [página]
-   5.7 Concordancia entre prototipo y Android ........................................ [página]
-6. Desarrollo de la aplicación en Android .............................................. [página]
-   6.1 Entorno de desarrollo .......................................................... [página]
-   6.2 Arquitectura real .............................................................. [página]
-   6.3 Estructura técnica ............................................................. [página]
-   6.4 Librerías y dependencias ....................................................... [página]
-   6.5 Navegación ..................................................................... [página]
-   6.6 Gestión de datos ............................................................... [página]
-   6.7 Funcionalidad por módulo ....................................................... [página]
-   6.8 Fragmentos representativos de código .......................................... [página]
-   6.9 Evidencia visual de ejecución .................................................. [página]
-7. Verificación técnica y resultados ................................................... [página]
-   7.1 Estrategia de verificación ..................................................... [página]
-   7.2 Resultados reproducibles ....................................................... [página]
-   7.3 Cumplimiento de requisitos ..................................................... [página]
-8. Conclusiones y trabajo futuro ........................................................ [página]
-Anexo A. Repositorio GitHub .............................................................. [página]
-Anexo B. Figma .......................................................................... [página]
-Referencias .............................................................................. [página]
-
-## Índice de figuras
-
-Figura 1. Fundamentos del sistema visual SPORTSGD ...................................... [página]
-Figura 2. Pantalla de acceso en el prototipo ............................................ [página]
-Figura 3. Recuperación de acceso en el prototipo ........................................ [página]
-Figura 4. Panel principal en el prototipo ............................................... [página]
-Figura 5. Menú global en el prototipo .................................................... [página]
-Figura 6. Lista de jugadores en el prototipo ............................................ [página]
-Figura 7. Calendario de actividades en el prototipo ..................................... [página]
-Figura 8. Metas y rutinas en el prototipo ............................................... [página]
-Figura 9. Estado de rutina activa en el prototipo ....................................... [página]
-Figura 10. Estado de rutina completada en el prototipo .................................. [página]
-Figura 11. Acceso ejecutado en Android ................................................... [página]
-Figura 12. Panel principal ejecutado en Android .......................................... [página]
-Figura 13. Ficha de jugador ejecutada en Android ......................................... [página]
-Figura 14. Metas y rutinas ejecutado en Android .......................................... [página]
-Figura 15. Alta de rutina ejecutada en Android ........................................... [página]
-Figura 16. Selector de jugador ejecutado en Android ...................................... [página]
-
-## Índice de tablas
-
-Tabla 1. Criterios para interpretar la evidencia del proyecto ........................... [página]
-Tabla 2. Objetivos específicos y evidencia asociada ...................................... [página]
-Tabla 3. Usuarios, necesidades y alcance observado ....................................... [página]
-Tabla 4. Arquitectura de información ..................................................... [página]
-Tabla 5. Flujos principales y resultado esperado ......................................... [página]
-Tabla 6. Paleta y tokens visuales ......................................................... [página]
-Tabla 7. Correspondencia de Atomic Design ................................................. [página]
-Tabla 8. Módulos del prototipo y estado Android .......................................... [página]
-Tabla 9. Configuración técnica del proyecto ............................................... [página]
-Tabla 10. Capas y responsabilidades ....................................................... [página]
-Tabla 11. Dependencias principales ........................................................ [página]
-Tabla 12. Destinos de navegación .......................................................... [página]
-Tabla 13. Entidades persistentes .......................................................... [página]
-Tabla 14. Implementación funcional por requisito ......................................... [página]
-Tabla 15. Resultados de verificación ...................................................... [página]
-Tabla 16. Limitaciones y ruta de evolución ................................................ [página]
+El DOCX genera automáticamente el índice general, el índice de figuras y el índice de tablas como campos actualizables con la paginación real de la exportación.
 
 <!-- SALTO DE PÁGINA -->
 
@@ -145,7 +66,7 @@ La solución fue construida en Kotlin mediante una aplicación Android basada en
 
 La validación final separa deliberadamente compilación, pruebas automatizadas, análisis estático y evidencia visual. Una ejecución conjunta de `testDebugUnitTest`, `lintDebug`, `assembleDebug` y `connectedDebugAndroidTest` terminó de manera exitosa en 13 segundos; las cuatro pruebas unitarias y las cuatro instrumentadas finalizaron sin fallos ni errores; lint no reportó errores y sí 128 advertencias; y se generó un APK de depuración de 9,766,942 bytes. Esta distinción impide equiparar “compila” con “está validado para producción”.
 
-El resto del reporte se organiza en objetivos, justificación, proceso UX, sistema de interfaces, desarrollo Android, verificación y conclusiones. Los anexos documentan el repositorio oficial y el archivo Figma. Se excluye deliberadamente cualquier sección de video, conforme al alcance solicitado.
+El resto del reporte se organiza en objetivos, justificación, proceso UX, sistema de interfaces, desarrollo Android, verificación y conclusiones. Los anexos documentan el repositorio oficial y el archivo Figma.
 
 # 2. Objetivos
 
@@ -861,14 +782,13 @@ En síntesis, SPORTSGD cumple con el objetivo de demostrar una aplicación móvi
 
 # Anexo A. Repositorio GitHub
 
-**Repositorio oficial:** [https://github.com/3m1l14n01/Proyecto_DAM](https://github.com/3m1l14n01/Proyecto_DAM)  
+**Repositorio oficial:** [https://github.com/3m1l14n01/Proyecto_DAM](https://github.com/3m1l14n01/Proyecto_DAM)
 **Rama principal:** `main`
 
 El repositorio es el medio oficial para conservar código, recursos, configuración reproducible y documentación. La carpeta local no contenía historial Git al inicio de la auditoría y el repositorio remoto estaba vacío de manera intencional. El flujo de entrega consiste en inicializar `main`, revisar archivos ignorados y secretos, crear un commit descriptivo, configurar `origin`, publicar y verificar el árbol remoto.
 
-> **Control previo a exportar el PDF:** sustituir este bloque por el identificador del commit final y la fecha/hora de verificación después de un `push` exitoso. Si el remoto todavía no se ha publicado, no afirmar lo contrario.  
-> **Commit final verificado:** `[PENDIENTE DE INSERTAR TRAS EL PUSH]`  
-> **Estado remoto:** `[PENDIENTE DE VERIFICACIÓN TRAS EL PUSH]`
+> **Commit técnico verificado:** `238159fc24afdd0453ade3dd3b42ebc4951bfacf`
+> **Estado remoto:** la rama `main` se publicó correctamente y `origin/main` coincidió con el commit técnico el 24 de septiembre de 2026. Los archivos DOCX y PDF del reporte se agregan en un commit documental posterior sin modificar ese estado de la aplicación.
 
 La estructura principal esperada es:
 
@@ -943,8 +863,6 @@ La organización visual aplica una escala de color, tipografía, espaciado y rad
 
 El enlace anterior identifica el archivo proporcionado. Este reporte no afirma que sus permisos sean públicos para usuarios no autenticados, porque esa condición depende de la configuración de Figma y debe verificarse manualmente desde una sesión externa antes de la entrega. Tampoco afirma que todas las conexiones interactivas del prototipo estén publicadas como un enlace independiente: no se proporcionó un URL distinto confirmado para modo prototipo.
 
-No se incluye un Anexo C. La producción, edición, alojamiento o documentación de video queda fuera del alcance de esta entrega.
-
 <!-- SALTO DE PÁGINA -->
 
 # Referencias
@@ -970,22 +888,3 @@ Iturralde Velazquez, E., & Juarez Padilla, A. de J. (s. f.-a). *Figma_Prototipo*
 Iturralde Velazquez, E., & Juarez Padilla, A. de J. (s. f.-b). *SPORTSGD: Boceto (Copy)* [Archivo de diseño]. Figma. https://www.figma.com/design/6k5n20lXzkAdAV046vQNsf/Boceto--Copy-?node-id=2046-3&p=f&t=ArnnZKDi80BUIyud-0
 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/
-
----
-
-## Lista de control editorial previa a la exportación
-
-> Esta lista es para la persona que genere el DOCX/PDF y no debe aparecer en la versión entregada.
-
-- Confirmar que la portada contiene exactamente los datos oficiales y ningún campus inventado.
-- Actualizar índice general, índice de figuras e índice de tablas con páginas reales.
-- Insertar cada imagen desde el archivo indicado, mantener proporción y comprobar legibilidad.
-- Mantener “Figura X” en negritas, título en cursivas y nota debajo de cada imagen.
-- Repetir encabezados de tablas que crucen página y evitar filas divididas cuando sea posible.
-- Aplicar Times New Roman 12 pt, márgenes de 2.54 cm, interlineado 1.5 y paginación superior derecha.
-- Reemplazar los marcadores del Anexo A por commit y estado remoto verificados después del push.
-- Actualizar la Tabla 15 si la última ejecución de Gradle arroja un conteo distinto.
-- Conservar en el reporte final los resultados instrumentados del 24 de septiembre y el nombre exacto del AVD.
-- Verificar que las figuras de `verification/` no hayan quedado obsoletas después de cambios visuales finales.
-- Revisar que ninguna página quede con títulos o pies de figura aislados.
-- Eliminar esta lista editorial antes de producir el PDF de entrega.

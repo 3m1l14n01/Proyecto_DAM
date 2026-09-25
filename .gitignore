@@ -29,6 +29,7 @@ secrets.properties
 /app/google-services.json
 
 # Operating-system and temporary files
+/docs/_rendered_docx/
 .DS_Store
 Thumbs.db
 *.tmp
