@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment android:id="@+id/loginFragment" android:name="com.example.sportsgd.presentation.fragments.LoginFragment" android:label="Iniciar sesión" />
+    <fragment android:id="@+id/recoverAccessFragment" android:name="com.example.sportsgd.presentation.fragments.RecoverAccessFragment" android:label="Recuperar acceso" />
+    <fragment android:id="@+id/checkEmailFragment" android:name="com.example.sportsgd.presentation.fragments.CheckEmailFragment" android:label="Revisa tu correo" />
+    <fragment android:id="@+id/dashboardFragment" android:name="com.example.sportsgd.presentation.fragments.DashboardFragment" android:label="Panel principal" />
+    <fragment android:id="@+id/playerListFragment" android:name="com.example.sportsgd.presentation.fragments.PlayerListFragment" android:label="Jugadores" />
+    <fragment android:id="@+id/playerFormFragment" android:name="com.example.sportsgd.presentation.fragments.PlayerFormFragment" android:label="Registrar jugador" />
+    <fragment android:id="@+id/playerRegisteredFragment" android:name="com.example.sportsgd.presentation.fragments.PlayerRegisteredFragment" android:label="Jugador registrado">
+        <argument android:name="playerId" android:defaultValue="-1L" app:argType="long" />
+    </fragment>
+    <fragment android:id="@+id/playerDetailFragment" android:name="com.example.sportsgd.presentation.fragments.PlayerDetailFragment" android:label="Ficha de jugador">
+        <argument android:name="playerId" android:defaultValue="-1L" app:argType="long" />
+    </fragment>
+    <fragment android:id="@+id/calendarFragment" android:name="com.example.sportsgd.presentation.fragments.CalendarFragment" android:label="Calendario" />
+    <fragment android:id="@+id/activityDetailFragment" android:name="com.example.sportsgd.presentation.fragments.ActivityDetailFragment" android:label="Detalle de actividad">
+        <argument android:name="activityId" android:defaultValue="-1L" app:argType="long" />
+    </fragment>
+    <fragment android:id="@+id/goalsFragment" android:name="com.example.sportsgd.presentation.fragments.GoalsFragment" android:label="Metas y rutinas" />
+    <fragment android:id="@+id/routineActiveFragment" android:name="com.example.sportsgd.presentation.fragments.RoutineActiveFragment" android:label="Rutina en curso">
+        <argument android:name="routineId" android:defaultValue="-1L" app:argType="long" />
+    </fragment>
+    <fragment android:id="@+id/routineCompletedFragment" android:name="com.example.sportsgd.presentation.fragments.RoutineCompletedFragment" android:label="Rutina completada">
+        <argument android:name="routineId" android:defaultValue="-1L" app:argType="long" />
+    </fragment>
+    <fragment android:id="@+id/notificationsFragment" android:name="com.example.sportsgd.presentation.fragments.NotificationsFragment" android:label="Notificaciones" />
+    <fragment android:id="@+id/menuFragment" android:name="com.example.sportsgd.presentation.fragments.MenuFragment" android:label="Menú" />
+    <fragment android:id="@+id/profileFragment" android:name="com.example.sportsgd.presentation.fragments.ProfileFragment" android:label="Perfil" />
+</navigation>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sportsgd_canvas">
+
+    <include
+        android:id="@+id/appHeader"
+        layout="@layout/view_app_header"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/header_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="32dp">
+
+            <TextView
+                style="@style/TextAppearance.SPORTSGD.ScreenTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/player_detail_title" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SPORTSGD.Card.Surface"
+                android:layout_width="match_parent"
+                android:layout_height="76dp"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/tvPlayerInitials"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_avatar"
+                        android:gravity="center"
+                        android:textColor="@color/sportsgd_white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="AM" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvPlayerName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/sportsgd_text_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            tools:text="Ana Martínez" />
+
+                        <TextView
+                            android:id="@+id/tvPlayerSummary"
+                            style="@style/TextAppearance.SPORTSGD.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            tools:text="Voleibol · 4.º semestre" />
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/viewPlayerStatus"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:background="@drawable/bg_status_success" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SPORTSGD.Card.White"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        style="@style/TextAppearance.SPORTSGD.CardTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sports_data" />
+
+                    <TextView
+                        android:id="@+id/tvDetailEmail"
+                        style="@style/TextAppearance.SPORTSGD.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        tools:text="Correo: ana@correo.com" />
+
+                    <TextView
+                        android:id="@+id/tvDetailAge"
+                        style="@style/TextAppearance.SPORTSGD.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        tools:text="Edad: 21 años" />
+
+                    <TextView
+                        android:id="@+id/tvDetailSport"
+                        style="@style/TextAppearance.SPORTSGD.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        tools:text="Deporte: Voleibol" />
+
+                    <TextView
+                        android:id="@+id/tvDetailPosition"
+                        style="@style/TextAppearance.SPORTSGD.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        tools:text="Posición: Central" />
+
+                    <TextView
+                        android:id="@+id/tvDetailTeam"
+                        style="@style/TextAppearance.SPORTSGD.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        tools:text="Equipo: Representativo universitario" />
+
+                    <TextView
+                        android:id="@+id/tvDetailSemester"
+                        style="@style/TextAppearance.SPORTSGD.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        tools:text="Semestre: 4.º" />
+
+                    <TextView
+                        android:id="@+id/tvNextActivity"
+                        style="@style/TextAppearance.SPORTSGD.Body.Secondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:visibility="gone"
+                        tools:text="Próxima actividad: Entrenamiento de saque" />
+
+                    <TextView
+                        android:id="@+id/tvDetailAverage"
+                        style="@style/TextAppearance.SPORTSGD.Body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        tools:text="Promedio: 9.3" />
+
+                    <TextView
+                        android:id="@+id/tvDetailStatus"
+                        style="@style/TextAppearance.SPORTSGD.Body.Secondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        tools:text="Estado: Activo" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBackToPlayers"
+                style="@style/Widget.SPORTSGD.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="24dp"
+                android:text="@string/back_to_players" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

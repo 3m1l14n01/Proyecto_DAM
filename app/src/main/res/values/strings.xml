@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SPORTSGD</string>
+    <string name="content_description_logo">Logotipo de SPORTSGD</string>
+    <string name="content_description_menu">Abrir menú</string>
+    <string name="content_description_close_menu">Cerrar menú</string>
+    <string name="content_description_notifications">Abrir notificaciones</string>
+    <string name="content_description_success">Operación completada</string>
+    <string name="brand_name">SPORTSGD</string>
+
+    <string name="login_title">Tu equipo, siempre en juego</string>
+    <string name="login_description">Inicia sesión para gestionar a tus jugadores, rutinas y actividades.</string>
+    <string name="email_label">Correo electrónico</string>
+    <string name="email_hint">tu@correo.com</string>
+    <string name="password_label">Contraseña</string>
+    <string name="password_hint">Introduce tu contraseña</string>
+    <string name="remember_access">Recordar mi acceso</string>
+    <string name="login_action">Iniciar sesión</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="demo_access_hint">Demo: coach@sportsgd.mx · Sport2026!</string>
+    <string name="recover_title">Recupera tu acceso</string>
+    <string name="recover_description">Escribe tu correo para continuar con el restablecimiento de contraseña.</string>
+    <string name="continue_action">Continuar</string>
+    <string name="recover_demo_notice">En esta demostración no se enviará un correo real.</string>
+    <string name="back_to_login">Volver al inicio de sesión</string>
+    <string name="check_email_title">Revisa tu correo</string>
+    <string name="check_email_description">En la app, recibirías las instrucciones para restablecer tu contraseña. Esta es una demostración.</string>
+    <string name="return_to_login">Volver a iniciar sesión</string>
+
+    <string name="home">Inicio</string>
+    <string name="players">Jugadores</string>
+    <string name="calendar">Calendario</string>
+    <string name="goals">Metas</string>
+    <string name="menu">Menú</string>
+    <string name="profile">Perfil</string>
+    <string name="open_profile">Abrir perfil</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="menu_description">Todas tus herramientas en un lugar</string>
+    <string name="goals_and_routines">Metas y rutinas</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="demo_session">Sesión de demostración</string>
+    <string name="chevron">›</string>
+    <string name="menu_symbol">☰</string>
+    <string name="close_symbol">×</string>
+    <string name="notification_symbol">●</string>
+    <string name="home_symbol">⌂</string>
+    <string name="players_symbol">●</string>
+    <string name="calendar_symbol">□</string>
+    <string name="goals_symbol">✓</string>
+
+    <string name="dashboard_greeting">¡Hola, Ana!</string>
+    <string name="my_progress">Mi progreso</string>
+    <string name="progress_week">Semana 3 · Voleibol universitario</string>
+    <string name="dashboard_team_summary_demo">3 jugadores · 3 activos · 0 lesionados</string>
+    <string name="pending_tasks">Tareas pendientes</string>
+    <string name="pending_tasks_value">03</string>
+    <string name="active_goals">Metas activas</string>
+    <string name="active_goals_value">02</string>
+    <string name="next_activity_eyebrow">PRÓXIMA ACTIVIDAD</string>
+    <string name="training_serve">Entrenamiento de saque</string>
+    <string name="training_serve_meta">Hoy · 17:00 · Cancha A</string>
+
+    <string name="players_registered_count">%1$d atletas registrados</string>
+    <string name="players_registered_demo">3 atletas registrados</string>
+    <string name="add_player">Agregar jugador</string>
+    <string name="new_player">Nuevo jugador</string>
+    <string name="player_form_subtitle">Completa los datos personales, deportivos y académicos</string>
+    <string name="register_player">Registrar jugador</string>
+    <string name="save_player">Guardar jugador</string>
+    <string name="full_name">Nombre completo</string>
+    <string name="player_email">Correo</string>
+    <string name="player_age">Edad</string>
+    <string name="sport">Deporte</string>
+    <string name="position">Posición</string>
+    <string name="team">Equipo</string>
+    <string name="semester">Semestre</string>
+    <string name="average">Promedio</string>
+    <string name="status">Estado</string>
+    <string name="hint_full_name">Camila Ruiz</string>
+    <string name="hint_player_email">camila@correo.com</string>
+    <string name="hint_age">20</string>
+    <string name="hint_sport">Atletismo</string>
+    <string name="hint_position">Velocista</string>
+    <string name="hint_team">Representativo universitario</string>
+    <string name="hint_semester">1</string>
+    <string name="hint_average">9.2</string>
+    <string name="player_detail_title">Ficha de jugador</string>
+    <string name="sports_data">Datos del jugador</string>
+    <string name="player_next_activity">Próxima actividad: %1$s</string>
+    <string name="back_to_players">Volver a jugadores</string>
+    <string name="player_active">Activo</string>
+    <string name="player_injured">Lesionado</string>
+    <string name="player_inactive">Inactivo</string>
+    <string name="not_available">Sin información</string>
+
+    <string name="calendar_month">SEPTIEMBRE 2026</string>
+    <string name="calendar_week">Lun 21 · Mar 22 · Mié 23 · Jue 24 · Vie 25</string>
+    <string name="upcoming_activities">Próximas actividades</string>
+    <string name="calendar_empty">No hay próximas actividades</string>
+    <string name="physical_evidence">Entrega de evidencia física</string>
+    <string name="physical_evidence_meta">Viernes · 10:00</string>
+    <string name="activity_detail_title">Detalle de actividad</string>
+    <string name="activity_pending_title">Evidencia pendiente</string>
+    <string name="activity_pending_status">Pendiente de entrega</string>
+    <string name="activity_pending_description">Prepara tu evidencia y entrégala antes del plazo indicado.</string>
+    <string name="back_to_calendar">Volver al calendario</string>
+
+    <string name="goal_title">Completar 3 sesiones de fuerza</string>
+    <string name="goal_progress">2 de 3 sesiones · 67%%</string>
+    <string name="routine_today">RUTINA DE HOY</string>
+    <string name="routine_name">Fuerza de tren inferior</string>
+    <string name="routine_meta">4 ejercicios · 35 minutos</string>
+    <string name="start_routine">Iniciar rutina</string>
+    <string name="continue_routine">Continuar rutina</string>
+    <string name="routine_in_progress">Rutina en curso</string>
+    <string name="routine_in_progress_status">EN PROGRESO</string>
+    <string name="today_plan">Plan de hoy</string>
+    <string name="routine_help">Al terminar, marca la rutina como completada.</string>
+    <string name="finish_routine">Finalizar rutina</string>
+    <string name="routine_completed_title">¡Rutina completada!</string>
+    <string name="routine_completed_description">Tu rutina de fuerza quedó registrada. ¡Buen trabajo!</string>
+    <string name="back_to_goals">Volver a metas</string>
+    <string name="player_registered_title">¡Jugador registrado!</string>
+    <string name="player_registered_description">El nuevo jugador ya aparece en tu lista.</string>
+    <string name="see_players">Ver jugadores</string>
+    <string name="routine_step_1">01  Sentadillas · 3 series</string>
+    <string name="routine_step_2">02  Zancadas · 3 series</string>
+    <string name="routine_step_3">03  Puente de glúteos · 3 series</string>
+    <string name="routine_step_4">04  Estiramientos · 5 min</string>
+
+    <string name="notifications_subtitle">Actualizaciones importantes para tu actividad deportiva</string>
+    <string name="notification_goal_title">Meta actualizada</string>
+    <string name="notification_goal_message">Completa tu rutina de fuerza hoy.</string>
+    <string name="notification_activity_title">Recordatorio de actividad</string>
+    <string name="notification_activity_message">Entrenamiento de saque a las 17:00.</string>
+    <string name="notification_evidence_title">Evidencia pendiente</string>
+    <string name="notification_evidence_message">Entrega tu evidencia física antes del viernes.</string>
+
+    <string name="profile_title">Mi perfil</string>
+    <string name="profile_subtitle">Datos personales y sesión</string>
+    <string name="profile_name">Ana Martínez</string>
+    <string name="profile_initials">AM</string>
+    <string name="profile_email">ana@sportsgd.com</string>
+    <string name="profile_role">Estudiante deportista</string>
+    <string name="profile_team">Voleibol universitario</string>
+    <string name="profile_session_status">Sesión local activa</string>
+    <string name="profile_role_student">Rol: Estudiante</string>
+    <string name="profile_role_coach">Rol: Entrenador</string>
+    <string name="profile_data_scope">Alcance: datos locales compartidos</string>
+    <string name="profile_session_persisted">Sesión local recordada en este dispositivo</string>
+    <string name="profile_session_temporary">Sesión local temporal</string>
+    <string name="back_to_menu">Volver al menú</string>
+
+    <string-array name="player_status_options">
+        <item>@string/player_active</item>
+        <item>@string/player_injured</item>
+        <item>@string/player_inactive</item>
+    </string-array>
+</resources>

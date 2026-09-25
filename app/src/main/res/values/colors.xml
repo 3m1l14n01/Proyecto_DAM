@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sportsgd_canvas">#E6F6F4</color>
+    <color name="sportsgd_surface">#B0E4DD</color>
+    <color name="sportsgd_primary">#00A991</color>
+    <color name="sportsgd_primary_dark">#007F6D</color>
+    <color name="sportsgd_primary_deep">#004C41</color>
+    <color name="sportsgd_primary_container">#D3F3EE</color>
+    <color name="sportsgd_text_primary">#1E1E1E</color>
+    <color name="sportsgd_text_secondary">#5E5A5A</color>
+    <color name="sportsgd_input">#7F7878</color>
+    <color name="sportsgd_border">#E6E4E4</color>
+    <color name="sportsgd_success">#2FAF00</color>
+    <color name="sportsgd_warning">#FF8000</color>
+    <color name="sportsgd_error">#FF383C</color>
+    <color name="sportsgd_caution">#FFCC00</color>
+    <color name="sportsgd_info">#2276C9</color>
+    <color name="sportsgd_white">#FFFFFF</color>
+    <color name="sportsgd_transparent">#00000000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

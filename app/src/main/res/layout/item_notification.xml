@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardNotification"
+    style="@style/Widget.SPORTSGD.Card.Surface"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <View
+            android:id="@+id/viewUnreadIndicator"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="@drawable/bg_status_success"
+            app:layout_constraintBottom_toBottomOf="@id/tvNotificationTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvNotificationTitle" />
+
+        <TextView
+            android:id="@+id/tvNotificationTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/sportsgd_text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tvNotificationDate"
+            app:layout_constraintStart_toEndOf="@id/viewUnreadIndicator"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Meta actualizada" />
+
+        <TextView
+            android:id="@+id/tvNotificationDate"
+            style="@style/TextAppearance.SPORTSGD.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hoy" />
+
+        <TextView
+            android:id="@+id/tvNotificationMessage"
+            style="@style/TextAppearance.SPORTSGD.Body.Secondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNotificationTitle"
+            tools:text="Completa tu rutina de fuerza hoy." />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    <path
+        android:fillColor="@color/sportsgd_white"
+        android:pathData="M45,1H19C9.0589,1 1,9.0589 1,19V45C1,54.9411 9.0589,63 19,63H45C54.9411,63 63,54.9411 63,45V19C63,9.0589 54.9411,1 45,1Z" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M44,18C38,13 25,13 19,20C12,28 17,35 29,36C41,37 47,41 44,48C40,57 25,58 17,51"
+        android:strokeColor="@color/sportsgd_primary_dark"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="7" />
+    <path
+        android:fillColor="#2FAD9E"
+        android:pathData="M47,21C49.2091,21 51,19.2091 51,17C51,14.7909 49.2091,13 47,13C44.7909,13 43,14.7909 43,17C43,19.2091 44.7909,21 47,21Z" />
+</vector>

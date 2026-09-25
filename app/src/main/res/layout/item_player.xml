@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardPlayer"
+    style="@style/Widget.SPORTSGD.Card.Surface"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:layout_marginBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvPlayerInitials"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:background="@drawable/bg_avatar"
+            android:gravity="center"
+            android:textColor="@color/sportsgd_white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="AM" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPlayerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/sportsgd_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Ana Martínez" />
+
+            <TextView
+                android:id="@+id/tvPlayerMeta"
+                style="@style/TextAppearance.SPORTSGD.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                tools:text="Voleibol · 4.º semestre" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPlayerStatus"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:gravity="center"
+            android:text="●"
+            android:textColor="@color/sportsgd_success"
+            android:textSize="12sp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.SPORTSGD" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/sportsgd_primary</item>
+        <item name="colorOnPrimary">@color/sportsgd_white</item>
+        <item name="colorPrimaryContainer">@color/sportsgd_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/sportsgd_text_primary</item>
+        <item name="colorSurface">@color/sportsgd_surface</item>
+        <item name="colorOnSurface">@color/sportsgd_text_primary</item>
+        <item name="colorSurfaceVariant">@color/sportsgd_canvas</item>
+        <item name="colorOnSurfaceVariant">@color/sportsgd_text_secondary</item>
+        <item name="colorOutline">@color/sportsgd_border</item>
+        <item name="colorError">@color/sportsgd_error</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:navigationBarColor">@color/sportsgd_surface</item>
+        <item name="android:statusBarColor">@color/sportsgd_primary_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@color/sportsgd_canvas</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+</resources>

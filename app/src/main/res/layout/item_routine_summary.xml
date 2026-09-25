@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    style="@style/Widget.SPORTSGD.Card.White">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvRoutineItemTitle"
+            style="@style/TextAppearance.SPORTSGD.CardTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvRoutineItemMeta"
+            style="@style/TextAppearance.SPORTSGD.Body.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvRoutineItemProgress"
+            style="@style/TextAppearance.SPORTSGD.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRoutineItemAction"
+            style="@style/Widget.SPORTSGD.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/start_routine" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

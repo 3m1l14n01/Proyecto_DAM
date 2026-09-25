@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="88dp"
+    android:height="88dp"
+    android:viewportWidth="88"
+    android:viewportHeight="88">
+    <path
+        android:fillColor="@color/sportsgd_surface"
+        android:pathData="M44,0A44,44 0,1 0,44 88A44,44 0,1 0,44 0" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M21,29L44,47L67,29M21,29H67V59H21Z"
+        android:strokeColor="@color/sportsgd_primary_dark"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4" />
+</vector>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sportsgd_canvas">
+
+    <include
+        android:id="@+id/appHeader"
+        layout="@layout/view_app_header"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/header_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/playerFormScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="32dp">
+
+            <TextView
+                style="@style/TextAppearance.SPORTSGD.ScreenTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/new_player" />
+
+            <TextView
+                style="@style/TextAppearance.SPORTSGD.Body.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/player_form_subtitle"
+                android:textSize="12sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.SPORTSGD.Card.Surface"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        style="@style/TextAppearance.SPORTSGD.CardTitleLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/register_player" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerName"
+                        style="@style/Widget.SPORTSGD.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="@string/full_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlayerName"
+                            style="@style/Widget.SPORTSGD.TextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:hint="@string/hint_full_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerEmail"
+                        style="@style/Widget.SPORTSGD.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/player_email">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlayerEmail"
+                            style="@style/Widget.SPORTSGD.TextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:hint="@string/hint_player_email"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerAge"
+                        style="@style/Widget.SPORTSGD.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/player_age">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlayerAge"
+                            style="@style/Widget.SPORTSGD.TextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:hint="@string/hint_age"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="2" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerSport"
+                        style="@style/Widget.SPORTSGD.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/sport">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlayerSport"
+                            style="@style/Widget.SPORTSGD.TextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:hint="@string/hint_sport"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerPosition"
+                        style="@style/Widget.SPORTSGD.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/position">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlayerPosition"
+                            style="@style/Widget.SPORTSGD.TextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:hint="@string/hint_position"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerTeam"
+                        style="@style/Widget.SPORTSGD.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/team">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlayerTeam"
+                            style="@style/Widget.SPORTSGD.TextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:hint="@string/hint_team"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerSemester"
+                        style="@style/Widget.SPORTSGD.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/semester">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlayerSemester"
+                            style="@style/Widget.SPORTSGD.TextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:hint="@string/hint_semester"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="2" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerAverage"
+                        style="@style/Widget.SPORTSGD.TextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/average">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPlayerAverage"
+                            style="@style/Widget.SPORTSGD.TextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:digits="0123456789."
+                            android:hint="@string/hint_average"
+                            android:imeOptions="actionDone"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPlayerStatus"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:hint="@string/status"
+                        app:boxBackgroundColor="@color/sportsgd_white"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxStrokeColor="@color/input_stroke">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/actvPlayerStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:hint="@string/player_active"
+                            android:inputType="none"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:textColor="@color/sportsgd_text_primary"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSavePlayer"
+                        style="@style/Widget.SPORTSGD.Button.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/save_player" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bottomNavigation"
+        layout="@layout/view_bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bottom_nav_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

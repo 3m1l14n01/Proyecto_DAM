@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_height"
+    android:background="@color/sportsgd_primary"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/spacing_sm"
+    android:paddingEnd="@dimen/spacing_sm">
+
+    <TextView
+        android:id="@+id/btnMenu"
+        android:layout_width="@dimen/touch_target"
+        android:layout_height="@dimen/touch_target"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/content_description_menu"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/menu_symbol"
+        android:textColor="@color/sportsgd_white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ivHeaderLogo"
+        android:layout_width="@dimen/logo_header"
+        android:layout_height="@dimen/logo_header"
+        android:layout_marginStart="@dimen/spacing_xs"
+        android:contentDescription="@string/content_description_logo"
+        android:scaleType="fitCenter"
+        android:src="@drawable/sportsgd_logo" />
+
+    <TextView
+        android:id="@+id/tvHeaderBrand"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_xs"
+        android:layout_weight="1"
+        android:fontFamily="monospace"
+        android:text="@string/brand_name"
+        android:textColor="@color/sportsgd_white"
+        android:textSize="@dimen/text_brand_header" />
+
+    <TextView
+        android:id="@+id/btnNotifications"
+        android:layout_width="@dimen/touch_target"
+        android:layout_height="@dimen/touch_target"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/content_description_notifications"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/notification_symbol"
+        android:textColor="@color/sportsgd_white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
+

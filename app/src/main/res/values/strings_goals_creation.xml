@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_goal">Nueva meta</string>
+    <string name="create_routine">Nueva rutina</string>
+    <string name="all_goals">Todas las metas</string>
+    <string name="all_routines">Todas las rutinas</string>
+    <string name="no_goals">Todavía no hay metas. Crea una para comenzar.</string>
+    <string name="no_routines">Todavía no hay rutinas. Crea una para comenzar.</string>
+    <string name="goal_player_label">Jugador</string>
+    <string name="goal_form_title">Nombre de la meta</string>
+    <string name="goal_form_description">Descripción (opcional)</string>
+    <string name="goal_form_current">Avance actual</string>
+    <string name="goal_form_target">Objetivo</string>
+    <string name="goal_form_unit">Unidad</string>
+    <string name="goal_form_deadline">Fecha límite AAAA-MM-DD (opcional)</string>
+    <string name="routine_form_goal">Meta vinculada (opcional)</string>
+    <string name="routine_form_title">Nombre de la rutina</string>
+    <string name="routine_form_description">Descripción (opcional)</string>
+    <string name="routine_form_duration">Duración estimada en minutos</string>
+    <string name="routine_form_steps">Pasos, uno por línea</string>
+    <string name="routine_form_steps_hint">Escribe un paso por línea.</string>
+    <string name="routine_without_goal">Sin meta vinculada</string>
+    <string name="save_action">Guardar</string>
+    <string name="cancel_action">Cancelar</string>
+    <string name="goal_saved">Meta guardada correctamente.</string>
+    <string name="routine_saved">Rutina guardada correctamente.</string>
+    <string name="players_required_for_goals">Registra primero un jugador.</string>
+    <string name="view_summary">Ver resumen</string>
+</resources>

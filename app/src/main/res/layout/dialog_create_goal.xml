@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilGoalPlayer"
+            style="@style/Widget.SPORTSGD.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/goal_player_label"
+            app:endIconMode="dropdown_menu">
+
+            <AutoCompleteTextView
+                android:id="@+id/actvGoalPlayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/goal_player_label"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilGoalTitle"
+            style="@style/Widget.SPORTSGD.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/goal_form_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGoalTitle"
+                style="@style/Widget.SPORTSGD.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilGoalDescription"
+            style="@style/Widget.SPORTSGD.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/goal_form_description">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGoalDescription"
+                style="@style/Widget.SPORTSGD.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilGoalCurrent"
+            style="@style/Widget.SPORTSGD.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/goal_form_current">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGoalCurrent"
+                style="@style/Widget.SPORTSGD.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="0" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilGoalTarget"
+            style="@style/Widget.SPORTSGD.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/goal_form_target">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGoalTarget"
+                style="@style/Widget.SPORTSGD.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilGoalUnit"
+            style="@style/Widget.SPORTSGD.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/goal_form_unit">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGoalUnit"
+                style="@style/Widget.SPORTSGD.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:text="sesiones" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilGoalDeadline"
+            style="@style/Widget.SPORTSGD.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="@string/goal_form_deadline">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etGoalDeadline"
+                style="@style/Widget.SPORTSGD.TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</ScrollView>

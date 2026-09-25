@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bottom_nav_height"
+    android:background="@color/sportsgd_surface"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/sportsgd_border" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spacing_sm"
+        android:paddingEnd="@dimen/spacing_sm">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:text="@string/home_symbol"
+                android:textColor="@color/nav_item_tint"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:duplicateParentState="true"
+                android:text="@string/home"
+                android:textColor="@color/nav_item_tint"
+                android:textSize="@dimen/text_nav" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navPlayers"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:text="@string/players_symbol"
+                android:textColor="@color/nav_item_tint"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:duplicateParentState="true"
+                android:text="@string/players"
+                android:textColor="@color/nav_item_tint"
+                android:textSize="@dimen/text_nav" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navCalendar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:text="@string/calendar_symbol"
+                android:textColor="@color/nav_item_tint"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:duplicateParentState="true"
+                android:text="@string/calendar"
+                android:textColor="@color/nav_item_tint"
+                android:textSize="@dimen/text_nav" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navGoals"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:text="@string/goals_symbol"
+                android:textColor="@color/nav_item_tint"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:duplicateParentState="true"
+                android:text="@string/goals"
+                android:textColor="@color/nav_item_tint"
+                android:textSize="@dimen/text_nav" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+

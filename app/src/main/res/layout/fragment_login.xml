@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sportsgd_canvas"
+    android:fillViewport="true"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="844dp"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding">
+
+        <ImageView
+            android:id="@+id/ivLoginLogo"
+            android:layout_width="@dimen/logo_large"
+            android:layout_height="@dimen/logo_large"
+            android:contentDescription="@string/content_description_logo"
+            android:src="@drawable/sportsgd_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="64dp" />
+
+        <TextView
+            android:id="@+id/tvLoginBrand"
+            android:layout_width="0dp"
+            android:layout_height="28dp"
+            android:fontFamily="monospace"
+            android:gravity="center_vertical"
+            android:text="@string/brand_name"
+            android:textColor="@color/sportsgd_text_primary"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="148dp" />
+
+        <TextView
+            android:id="@+id/tvLoginTitle"
+            style="@style/TextAppearance.SPORTSGD.ScreenTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/login_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLoginBrand" />
+
+        <TextView
+            android:id="@+id/tvLoginDescription"
+            style="@style/TextAppearance.SPORTSGD.Body.Secondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:lineSpacingExtra="1dp"
+            android:text="@string/login_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLoginTitle" />
+
+        <LinearLayout
+            android:id="@+id/loginForm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="336dp">
+
+            <TextView
+                style="@style/TextAppearance.SPORTSGD.Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/email_label" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.SPORTSGD.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    style="@style/Widget.SPORTSGD.TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/input_height"
+                    android:hint="@string/email_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                style="@style/TextAppearance.SPORTSGD.Label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/password_label" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.SPORTSGD.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:endIconMode="password_toggle"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPassword"
+                    style="@style/Widget.SPORTSGD.TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/input_height"
+                    android:hint="@string/password_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbRememberSession"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:checked="true"
+                android:gravity="center_vertical"
+                android:text="@string/remember_access"
+                android:textColor="@color/sportsgd_text_secondary"
+                android:textSize="12sp"
+                app:buttonTint="@color/nav_item_tint" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                style="@style/Widget.SPORTSGD.Button.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:text="@string/login_action" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/loginHelp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="654dp">
+
+            <TextView
+                android:id="@+id/tvRecoverAccess"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/forgot_password"
+                android:textColor="@color/sportsgd_primary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvDemoAccess"
+                style="@style/TextAppearance.SPORTSGD.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="@string/demo_access_hint" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+
