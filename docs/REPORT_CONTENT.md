@@ -24,13 +24,13 @@ Antonio de Jesus Juarez Padilla
 
 <!-- SALTO DE PÁGINA -->
 
-## Criterio de evidencia y alcance del reporte
+## Alcance y criterios de validación
 
-Este reporte integra cuatro clases de evidencia que no deben confundirse entre sí: el código fuente Android disponible en la carpeta del proyecto; los resultados de compilación, pruebas y análisis estático obtenidos durante la revisión técnica; el prototipo de alta fidelidad en Figma y su exportación a PDF; y los documentos académicos previos `Actividad3_DAM_.pdf` y `SPORTSGD_Reporte_1.1.pdf` (Iturralde Velazquez & Juarez Padilla, 2026a, 2026b). Las pantallas de Figma se presentan como diseño o referencia visual; las imágenes almacenadas en `verification/` se presentan como evidencia real de ejecución disponible en el proyecto. Una imagen del prototipo nunca se utiliza como si fuera una captura de Android.
+Este reporte integra cuatro fuentes complementarias: el código fuente Android; los resultados de compilación, pruebas y análisis estático; el prototipo de alta fidelidad en Figma; y la documentación técnica del proyecto. Las pantallas de Figma se presentan como referencia de diseño, mientras que las capturas obtenidas de la aplicación corresponden a evidencia de ejecución en Android.
 
-El análisis de experiencia de usuario distingue entre actividades documentadas y evaluación retrospectiva. Los materiales sí evidencian una arquitectura de información, flujos, fundamentos visuales y componentes organizados con Atomic Design. No se encontró evidencia suficiente para afirmar que se realizaron entrevistas, sesiones formales de observación, pruebas moderadas con usuarios, encuestas o mediciones cuantitativas de usabilidad. Por ello, los perfiles, necesidades y observaciones heurísticas desarrollados en este documento se presentan como análisis técnico posterior, no como resultados de investigación de campo.
+El análisis de experiencia de usuario se basa en la arquitectura de información, los flujos, los fundamentos visuales y los componentes organizados con Atomic Design. El alcance de esta etapa no incluye entrevistas, observación formal, pruebas moderadas con usuarios, encuestas ni mediciones cuantitativas de usabilidad. Por tanto, los perfiles y las observaciones heurísticas se emplean como análisis funcional del producto y como base para futuras pruebas de usabilidad.
 
-La aplicación auditada es un prototipo académico local. Incluye persistencia, navegación y operaciones funcionales dentro del dispositivo, pero no un backend remoto, sincronización entre usuarios, envío real de correo ni notificaciones push productivas. La interfaz de recuperación confirma únicamente que una dirección pertenece al conjunto de cuentas de demostración; no envía un mensaje. Estas restricciones se explican en cada sección pertinente.
+SPORTSGD es un prototipo académico local. Incluye persistencia, navegación y operaciones funcionales en el dispositivo, pero no incorpora backend remoto, sincronización, correo real ni notificaciones push. La recuperación de acceso valida cuentas de demostración sin enviar mensajes externos. Estas características delimitan el alcance de la versión presentada.
 
 **Tabla 1**  
 *Criterios para interpretar la evidencia del proyecto*
@@ -40,9 +40,9 @@ La aplicación auditada es un prototipo académico local. Incluye persistencia, 
 | Implementación Android | Código Kotlin, XML, recursos y configuración Gradle | Existencia de módulos, flujos, validaciones, persistencia y estructura técnica | Calidad en producción o comportamiento en todos los dispositivos |
 | Verificación actual | `testDebugUnitTest`, `lintDebug` y `assembleDebug`, ejecutados durante la revisión final | Compilación del APK, resultado de pruebas unitarias y hallazgos de lint | Cobertura total, ausencia absoluta de defectos o validación humana integral |
 | Verificación instrumentada final | Cuatro pruebas ejecutadas el 24 de septiembre de 2026 en `Medium_Phone(AVD) - 17` | Arranque, persistencia de rutina, rechazo de rol inválido y actualización de agenda demo | Cobertura integral de todos los recorridos y dispositivos |
-| Prototipo | Archivo Figma y `Figma_Prototipo.pdf` | Intención visual, organización de componentes y estados diseñados | Funciones implementadas o comportamiento real de Android |
+| Prototipo | Archivo de diseño en Figma | Intención visual, organización de componentes y estados diseñados | Funciones implementadas o comportamiento real de Android |
 | Capturas reales disponibles | Archivos en `verification/` | Apariencia observada durante una ejecución en emulador | Prueba exhaustiva de todos los casos, equipos o versiones del sistema |
-| Documentación previa | `Actividad3_DAM_.pdf` y `SPORTSGD_Reporte_1.1.pdf` | Antecedentes, alcance planeado y evolución académica | Estado técnico final si contradice el código auditado |
+| Requisitos del proyecto | Alcance funcional y criterios académicos | Marco de referencia para el alcance | No sustituye la validación técnica del código |
 
 *Nota.* La fuente principal de verdad técnica es el código final del proyecto. Cuando existe una contradicción, se privilegia la evidencia ejecutable y se describe la diferencia.
 
@@ -60,7 +60,7 @@ SPORTSGD es una aplicación Android académica orientada a la organización de a
 
 El problema abordado es principalmente organizativo. Un entrenador necesita consultar y mantener datos de jugadores, identificar actividades próximas, asignar objetivos y revisar el avance de rutinas. Un estudiante necesita entrar a la misma experiencia con permisos acotados, consultar su información y completar las actividades que le corresponden. Cuando estos elementos se gestionan en canales separados, aumenta la posibilidad de omisiones, duplicación o pérdida de contexto. SPORTSGD modela una alternativa centralizada en el dispositivo para explorar esos flujos de forma consistente.
 
-El alcance final se definió a partir de tres fuentes: los requisitos académicos previos, el prototipo de alta fidelidad y el código que realmente puede compilarse y verificarse. Esta triangulación fue necesaria porque los documentos anteriores describían funciones en distintos grados de avance. Por ejemplo, `Actividad3_DAM_.pdf` registraba el acceso y el panel como completos, mientras que el registro, el calendario y las metas aparecían en proceso; el proyecto Android actual ya contiene destinos, interfaces y persistencia local para esos módulos. En sentido contrario, las notificaciones push, el correo de recuperación y la sincronización remota siguen fuera del alcance implementado, aunque existan pantallas o fronteras técnicas que anticipan una integración futura.
+El alcance final comprende los módulos implementados en la aplicación Android: acceso, panel, registro y consulta de jugadores, calendario, metas, rutinas, notificaciones internas y perfil. El prototipo de Figma funciona como referencia visual y de interacción para estos flujos. Las funciones que requieren servicios externos, como notificaciones push, correo de recuperación y sincronización remota, permanecen fuera del alcance funcional de esta versión y se consideran líneas de evolución del proyecto.
 
 La solución fue construida en Kotlin mediante una aplicación Android basada en vistas XML y View Binding. La presentación se distribuye entre una actividad contenedora, fragmentos, adaptadores y ViewModels; el dominio define modelos y contratos; la capa de datos implementa repositorios locales sobre Room; y un contenedor de aplicación realiza la composición manual de dependencias. Jetpack Navigation coordina 16 destinos. La sesión de demostración se mantiene con `SharedPreferences`, mientras que jugadores, actividades, metas, rutinas, pasos y notificaciones se conservan en una base de datos Room.
 
@@ -92,7 +92,7 @@ Diseñar, desarrollar y validar técnicamente un prototipo funcional de aplicaci
 
 | Objetivo | Evidencia principal | Estado al cierre de la auditoría |
 |---|---|---|
-| Delimitar requisitos | Matriz entre PDFs, Figma y código | Completado para los módulos revisados |
+| Delimitar requisitos | Matriz entre requisitos, Figma y código | Completado para los módulos implementados |
 | Diferenciar roles | `UserRole`, sesión y controles de alta visibles para entrenador | Implementado en el prototipo local |
 | Autenticación y sesión | Repositorio local, `SessionManager`, acceso y cierre de sesión | Implementado con credenciales de demostración |
 | Jugadores | Lista, formulario, ficha, repositorio y entidad Room | Implementado localmente |
@@ -101,7 +101,7 @@ Diseñar, desarrollar y validar técnicamente un prototipo funcional de aplicaci
 | Notificaciones | Entidad y lista interna con estado de lectura | Implementado sin push remoto |
 | Concordancia visual | Tokens Android y comparación con Figma | Parcial: sistema visual alineado; no se incluyeron fuentes personalizadas |
 | Verificación | Build, pruebas unitarias, instrumentadas y lint | Completado dentro del alcance descrito |
-| Entrega reproducible | README, configuración Gradle y repositorio oficial | Debe confirmarse con el estado final del repositorio antes de exportar el PDF |
+| Entrega reproducible | README, configuración Gradle y repositorio oficial | Documentado en README y repositorio oficial |
 
 *Nota.* “Implementado localmente” significa que la función opera con datos almacenados en el dispositivo o de demostración; no implica un servicio multiusuario en producción.
 
@@ -119,15 +119,15 @@ El almacenamiento local hace viable una demostración sin infraestructura extern
 
 La viabilidad se confirmó en términos de construcción: el proyecto usa un wrapper de Gradle versionado, un catálogo central de dependencias y un único módulo `app`; puede compilar un APK de depuración con el entorno auditado. No obstante, viabilidad académica no equivale a preparación para tienda. Antes de una distribución productiva serían necesarios un identificador de aplicación propio —en lugar de `com.example.sportsgd`—, firma de versión, políticas de privacidad, autenticación segura, cifrado y control de acceso del lado servidor, estrategia de migraciones de base de datos y una matriz de pruebas ampliada.
 
-No se utilizan estadísticas externas para exagerar la necesidad o el impacto del proyecto. La justificación se apoya en los flujos observables, la estructura del prototipo y la capacidad técnica demostrada. Este criterio también corrige el reporte previo: cualquier cifra que no cuente con una fuente verificable se omite en lugar de presentarse como evidencia.
+La justificación se sustenta en los flujos funcionales, la estructura del prototipo y la capacidad técnica implementada. Las afirmaciones cuantitativas se limitan a datos respaldados por las fuentes incluidas en las referencias, con el fin de mantener trazabilidad académica y evitar conclusiones no sustentadas.
 
 # 4. Proceso de diseño UX
 
-## 4.1 Evidencia disponible y método de análisis
+## 4.1 Fundamentos y método de análisis
 
-Los materiales de Figma documentan fundamentos visuales, identidad, átomos, moléculas, organismos, plantillas, estados y 20 pantallas de alta fidelidad. Esto permite afirmar que existe un trabajo estructurado de diseño de interfaz y que se aplicó una taxonomía compatible con Atomic Design. Los documentos académicos previos también describen el problema, los usuarios generales y una evolución por módulos.
+El prototipo de Figma documenta fundamentos visuales, identidad, átomos, moléculas, organismos, plantillas, estados y 20 pantallas de alta fidelidad. Esta organización evidencia un trabajo estructurado de diseño de interfaz y una taxonomía compatible con Atomic Design. El planteamiento del proyecto define además el problema, los perfiles funcionales y la evolución modular de la solución.
 
-No se encontró un protocolo de entrevistas, transcripciones, cuestionarios, mapa de empatía firmado, registro de pruebas con participantes ni métricas de éxito. En consecuencia, el proceso descrito aquí tiene dos capas. La primera resume los artefactos realmente disponibles. La segunda analiza retrospectivamente el producto mediante tareas, jerarquía, consistencia, prevención de errores y accesibilidad. Esta segunda capa no se presenta como investigación con usuarios.
+El alcance de esta etapa se centra en el diseño y el análisis heurístico; no incluye un estudio formal con entrevistas, cuestionarios o pruebas de campo. El análisis UX combina la descripción de los artefactos de diseño con una evaluación de tareas, jerarquía, consistencia, prevención de errores y accesibilidad. Este enfoque complementa el prototipo y establece una base para validaciones posteriores con usuarios.
 
 El método de revisión fue el siguiente:
 
@@ -216,7 +216,7 @@ Como trabajo futuro se recomienda realizar pruebas con representantes de ambos r
 
 ## 5.1 Fundamentos visuales
 
-El archivo Figma organiza la identidad de SPORTSGD antes de presentar las pantallas. Sus páginas de fundamentos, identidad, átomos, moléculas, organismos, plantillas y estados permiten rastrear decisiones comunes en lugar de interpretar cada vista como una composición aislada. La captura seleccionada para la Figura 1 sintetiza esa base sin reproducir las 29 páginas del PDF de prototipo.
+El archivo Figma organiza la identidad de SPORTSGD antes de presentar las pantallas. Sus páginas de fundamentos, identidad, átomos, moléculas, organismos, plantillas y estados permiten rastrear decisiones comunes en lugar de interpretar cada vista como una composición aislada. La captura seleccionada para la Figura 1 sintetiza esa base sin reproducir todas las pantallas del prototipo.
 
 **Figura 1**  
 *Fundamentos del sistema visual SPORTSGD*
@@ -225,7 +225,7 @@ El archivo Figma organiza la identidad de SPORTSGD antes de presentar las pantal
 
 ![Fundamentos del sistema visual SPORTSGD](assets/figma/foundations.png)
 
-*Nota.* Captura del archivo Figma del proyecto. Presenta tokens y decisiones visuales del prototipo; no corresponde a una pantalla ejecutada en Android. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* Captura del archivo Figma del proyecto. Presenta tokens y decisiones visuales del prototipo; no corresponde a una pantalla ejecutada en Android. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 La identidad utiliza verdes como colores principales, fondos de baja saturación y tarjetas que separan información sin depender de elevaciones pronunciadas. El texto principal se mantiene casi negro, el secundario en gris y los estados operativos añaden verde, naranja, rojo y amarillo. La implementación Android conserva estos valores en recursos semánticos, lo que facilita ajustar la paleta sin editar cada layout.
 
@@ -282,7 +282,7 @@ La pantalla de acceso prioriza la marca, dos campos y una acción principal. La 
 
 ![Pantalla de acceso en Figma](assets/figma/login.png)
 
-*Nota.* Captura del prototipo de alta fidelidad en Figma. Muestra la intención visual del acceso y no evidencia una sesión ejecutada. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* Captura del prototipo de alta fidelidad en Figma. Muestra la intención visual del acceso y no evidencia una sesión ejecutada. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 **Figura 3**  
 *Recuperación de acceso en el prototipo*
@@ -291,7 +291,7 @@ La pantalla de acceso prioriza la marca, dos campos y una acción principal. La 
 
 ![Recuperación de acceso en Figma](assets/figma/recover-access.png)
 
-*Nota.* Captura del flujo diseñado para recuperación. En la versión Android auditada no existe un servicio de correo; la confirmación es local y demostrativa. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* Captura del flujo diseñado para recuperación. En la versión Android auditada no existe un servicio de correo; la confirmación es local y demostrativa. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 Esta diferencia entre intención y función es deliberadamente visible en el reporte. Implementar el envío real requeriría un proveedor, plantillas, credenciales, manejo de tokens de un solo uso, caducidad y un backend que almacene usuarios de forma segura. No se simula ese servicio ni se afirma que un correo fue enviado.
 
@@ -306,7 +306,7 @@ El panel principal resume el estado del sistema en tarjetas y accesos a contenid
 
 ![Panel principal en Figma](assets/figma/dashboard.png)
 
-*Nota.* Pantalla diseñada en Figma para el panel principal. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* Pantalla diseñada en Figma para el panel principal. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 **Figura 5**  
 *Menú global en el prototipo*
@@ -315,7 +315,7 @@ El panel principal resume el estado del sistema en tarjetas y accesos a contenid
 
 ![Menú global en Figma](assets/figma/menu.png)
 
-*Nota.* El menú concentra perfil y acciones de sesión fuera de la navegación inferior. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* El menú concentra perfil y acciones de sesión fuera de la navegación inferior. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 La navegación Android replica esta lógica mediante los destinos `dashboardFragment`, `menuFragment` y `notificationsFragment`. `BaseAppFragment` enlaza los botones del encabezado y la barra inferior, evita navegar de nuevo al destino actual y restaura el estado de las secciones principales cuando es posible.
 
@@ -330,7 +330,7 @@ Jugadores combina una lista resumida, un alta restringida al entrenador y una fi
 
 ![Lista de jugadores en Figma](assets/figma/players.png)
 
-*Nota.* Captura del módulo de jugadores en Figma. Los datos mostrados son de demostración. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* Captura del módulo de jugadores en Figma. Los datos mostrados son de demostración. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 El calendario presenta actividades próximas y permite abrir un detalle. El modelo local registra título, descripción, tipo, inicio, fin, ubicación y, de forma opcional, un jugador relacionado. La versión actual no sincroniza calendarios externos ni crea recordatorios del sistema.
 
@@ -341,7 +341,7 @@ El calendario presenta actividades próximas y permite abrir un detalle. El mode
 
 ![Calendario de actividades en Figma](assets/figma/calendar.png)
 
-*Nota.* Captura del módulo de calendario en Figma; no implica integración con Google Calendar ni otro proveedor. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* Captura del módulo de calendario en Figma; no implica integración con Google Calendar ni otro proveedor. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 ## 5.6 Metas y rutinas
 
@@ -354,7 +354,7 @@ El módulo distingue una meta medible de una rutina operativa. Una meta tiene ju
 
 ![Metas y rutinas en Figma](assets/figma/goals.png)
 
-*Nota.* Captura del resumen diseñado en Figma. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* Captura del resumen diseñado en Figma. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 **Figura 9**  
 *Estado de rutina activa en el prototipo*
@@ -363,7 +363,7 @@ El módulo distingue una meta medible de una rutina operativa. Una meta tiene ju
 
 ![Rutina activa en Figma](assets/figma/routine-active.png)
 
-*Nota.* El estado activo enfatiza pasos, avance y acción de finalización. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* El estado activo enfatiza pasos, avance y acción de finalización. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 **Figura 10**  
 *Estado de rutina completada en el prototipo*
@@ -372,7 +372,7 @@ El módulo distingue una meta medible de una rutina operativa. Una meta tiene ju
 
 ![Rutina completada en Figma](assets/figma/routine-completed.png)
 
-*Nota.* Estado de confirmación diseñado para cerrar el ciclo de una rutina. Fuente: Iturralde Velazquez y Juarez Padilla (s. f.-b).
+*Nota.* Estado de confirmación diseñado para cerrar el ciclo de una rutina. Iturralde Velazquez y Juarez Padilla (s. f.).
 
 La finalización Android ocurre en una transacción Room: se completan los pasos, se actualiza la rutina, se incrementa —sin exceder el objetivo— la meta vinculada y se crea una notificación interna. La operación devuelve éxito únicamente cuando el registro existe y puede modificarse. Esta conducta evita mostrar una confirmación si la rutina cambió o ya no está disponible.
 
@@ -428,7 +428,7 @@ La configuración técnica se obtuvo directamente de los scripts Gradle del proy
 | Nombre de versión | 1.0 |
 | Base de datos | Room, versión 1, con esquema exportado |
 
-*Nota.* Los valores se obtuvieron del código fuente auditado (Iturralde Velazquez & Juarez Padilla, 2026c). `com.example.sportsgd` es adecuado para un prototipo académico, pero debe sustituirse por un identificador controlado por el equipo antes de publicar la aplicación.
+*Nota.* Los valores se obtuvieron del código fuente auditado (Iturralde Velazquez & Juarez Padilla, 2026). `com.example.sportsgd` es adecuado para un prototipo académico, pero debe sustituirse por un identificador controlado por el equipo antes de publicar la aplicación.
 
 El proyecto usa un catálogo `gradle/libs.versions.toml` para centralizar versiones y el wrapper incluye una suma SHA-256 para validar la distribución de Gradle. Los repositorios de dependencias están limitados a Google, Maven Central y Gradle Plugin Portal según el tipo de artefacto.
 
@@ -706,7 +706,7 @@ El análisis lint generó advertencias no bloqueantes. Su conteo se informa comp
 
 ## 7.3 Cumplimiento de requisitos
 
-La matriz siguiente actualiza el estado histórico de `Actividad3_DAM_.pdf`. En aquel documento, acceso y panel se reportaban completos; registro, calendario y metas permanecían en progreso; y push/evidencia quedaban pendientes. El código final revisado amplía los primeros módulos, pero no convierte dependencias externas en funciones productivas.
+El estado final de los requisitos refleja una ampliación funcional de acceso, panel, registro, calendario y metas. Las dependencias externas, como correo, notificaciones push, backend y almacenamiento remoto de evidencia, permanecen fuera de la implementación productiva.
 
 ### Requisitos completados en el prototipo local
 
@@ -785,10 +785,10 @@ En síntesis, SPORTSGD cumple con el objetivo de demostrar una aplicación móvi
 **Repositorio oficial:** [https://github.com/3m1l14n01/Proyecto_DAM](https://github.com/3m1l14n01/Proyecto_DAM)
 **Rama principal:** `main`
 
-El repositorio es el medio oficial para conservar código, recursos, configuración reproducible y documentación. La carpeta local no contenía historial Git al inicio de la auditoría y el repositorio remoto estaba vacío de manera intencional. El flujo de entrega consiste en inicializar `main`, revisar archivos ignorados y secretos, crear un commit descriptivo, configurar `origin`, publicar y verificar el árbol remoto.
+El repositorio es el medio oficial para conservar código, recursos, configuración reproducible y documentación. La rama `main` contiene el estado funcional auditado de la aplicación, los recursos de verificación y los entregables documentales. Antes de cada publicación se revisan los archivos ignorados y la ausencia de secretos; después del envío se comprueba que `HEAD`, `origin/main` y la referencia remota coincidan.
 
 > **Commit técnico verificado:** `238159fc24afdd0453ade3dd3b42ebc4951bfacf`
-> **Estado remoto:** la rama `main` se publicó correctamente y `origin/main` coincidió con el commit técnico el 24 de septiembre de 2026. Los archivos DOCX y PDF del reporte se agregan en un commit documental posterior sin modificar ese estado de la aplicación.
+> **Estado remoto al cierre:** la rama `main` se encuentra publicada. Los commits documentales posteriores actualizan el reporte, el README y la evidencia del video sin alterar la lógica funcional verificada en el commit técnico.
 
 La estructura principal esperada es:
 
@@ -842,7 +842,9 @@ El `README.md` debe ser la guía operativa del repositorio y coincidir con las v
 
 **Archivo de diseño:** [SPORTSGD — Boceto (Copy)](https://www.figma.com/design/6k5n20lXzkAdAV046vQNsf/Boceto--Copy-?node-id=2046-3&p=f&t=ArnnZKDi80BUIyud-0)
 
-El archivo concentra fundamentos, identidad, componentes y pantallas de alta fidelidad. La exportación `Figma_Prototipo.pdf` (Iturralde Velazquez & Juarez Padilla, s. f.-a) contiene 29 páginas: portada, tokens, identidad, plantilla, moléculas, organismos, átomos, estados y pantallas de los principales flujos. Para el reporte se seleccionaron solo diez imágenes representativas; esta selección evita que el capítulo de UX se convierta en un volcado del archivo.
+**Vista de prototipo consignada en la entrega:** [Abrir recorrido en Figma](https://www.figma.com/proto/6k5n20lXzkAdAV046vQNsf/Boceto--Copy-?node-id=2046-8&t=1DimvyLHJPG5xigP-1)
+
+El archivo concentra fundamentos, identidad, componentes y pantallas de alta fidelidad. La versión documentada del prototipo contiene 29 páginas organizadas en portada, tokens, identidad, plantilla, moléculas, organismos, átomos, estados y pantallas de los principales flujos. En este informe se incluyen imágenes representativas de las secciones necesarias para explicar el proceso UX/UI.
 
 Los módulos revisados directamente en Figma fueron:
 
@@ -861,7 +863,36 @@ Los módulos revisados directamente en Figma fueron:
 
 La organización visual aplica una escala de color, tipografía, espaciado y radios, además de una jerarquía de átomos, moléculas, organismos, plantillas y páginas. La resolución de referencia de las pantallas es 390 × 844 px. La implementación Android traduce esta intención a dp/sp y componentes Material para conservar capacidad de adaptación.
 
-El enlace anterior identifica el archivo proporcionado. Este reporte no afirma que sus permisos sean públicos para usuarios no autenticados, porque esa condición depende de la configuración de Figma y debe verificarse manualmente desde una sesión externa antes de la entrega. Tampoco afirma que todas las conexiones interactivas del prototipo estén publicadas como un enlace independiente: no se proporcionó un URL distinto confirmado para modo prototipo.
+Los enlaces anteriores identifican el archivo de diseño y la vista de prototipo consignados en la entrega. Este reporte no afirma que sus permisos sean públicos para usuarios no autenticados, porque esa condición depende de la configuración de Figma y debe verificarse desde una sesión externa antes de la entrega.
+
+<!-- SALTO DE PÁGINA -->
+
+# Anexo C. Video comercial y demostrativo de la app
+
+## Ficha técnica y acceso
+
+- **Título publicado:** *Demostracion de SportsGD*
+- **Canal:** Squeleton
+- **Fecha de publicación:** 25 de septiembre de 2026
+- **Duración:** 1 min 24 s (aprox.)
+- **Calidad máxima disponible:** 1080p60 (Full HD)
+- **Acceso:** público, verificado el 25 de septiembre de 2026
+- **Enlace permanente:** [https://youtu.be/efM6lr9yGcQ](https://youtu.be/efM6lr9yGcQ)
+
+El material publicado presenta la ejecución de SPORTSGD en un emulador Android y funciona como un recorrido demostrativo del producto. La propuesta de valor que contextualiza la pieza es concentrar, en una sola aplicación, el seguimiento cotidiano de jugadores, actividades, metas y rutinas que normalmente se consulta en fuentes separadas. El acceso público, la duración breve y la disponibilidad en Full HD permiten utilizarlo como evidencia audiovisual y como material de difusión del prototipo (Squeleton, 2026).
+
+## Recorrido funcional observado
+
+La secuencia inicia con la pantalla de acceso y continúa con el panel del entrenador, donde se muestran el resumen de jugadores, tareas, una meta activa y la próxima actividad. Después recorre el menú principal, la lista de jugadores, el calendario de próximas actividades y el módulo de metas y rutinas. En la parte final se observa el formulario de una nueva rutina, una rutina en curso, la confirmación de su finalización y la actualización de una meta de 67 % a 100 %.
+
+La demostración acredita navegación y cambios de estado visibles en el emulador. No muestra el registro concluido de un jugador o de una rutina nueva, ni demuestra backend, sincronización remota, notificaciones push o permisos completos por rol; por ello, el anexo no atribuye al video capacidades que no aparecen en pantalla. El material tampoco incorpora un gancho comercial ni un cierre de marca independientes. Como llamado a la acción documental se propone: *Conoce SPORTSGD y consulta la demostración completa en el enlace público*.
+
+**Figura 17**
+*Miniatura pública del video demostrativo de SPORTSGD*
+
+![Miniatura pública del video Demostracion de SportsGD](assets/video/sportsgd-video-thumbnail.jpg)
+
+*Nota.* Miniatura del video publicado por Squeleton (2026), disponible en YouTube: https://youtu.be/efM6lr9yGcQ
 
 <!-- SALTO DE PÁGINA -->
 
@@ -877,14 +908,10 @@ Android Developers. (s. f.-d). *Back up user data with Auto Backup*. Recuperado 
 
 Frost, B. (2016). *Atomic design*. Brad Frost. https://atomicdesign.bradfrost.com/
 
-Iturralde Velazquez, E., & Juarez Padilla, A. de J. (2026a). *Actividad 3: SPORTSGD* [Trabajo académico no publicado]. Universidad Tecmilenio.
+Iturralde Velazquez, E., & Juarez Padilla, A. de J. (2026). *SPORTSGD* [Código fuente de aplicación Android]. https://github.com/3m1l14n01/Proyecto_DAM
 
-Iturralde Velazquez, E., & Juarez Padilla, A. de J. (2026b). *SPORTSGD: Reporte 1.1* [Reporte académico no publicado]. Universidad Tecmilenio.
+Iturralde Velazquez, E., & Juarez Padilla, A. de J. (s. f.). *SPORTSGD: Boceto (Copy)* [Archivo de diseño]. Figma. https://www.figma.com/design/6k5n20lXzkAdAV046vQNsf/Boceto--Copy-?node-id=2046-3&p=f&t=ArnnZKDi80BUIyud-0
 
-Iturralde Velazquez, E., & Juarez Padilla, A. de J. (2026c). *SPORTSGD* [Código fuente de aplicación Android]. https://github.com/3m1l14n01/Proyecto_DAM
-
-Iturralde Velazquez, E., & Juarez Padilla, A. de J. (s. f.-a). *Figma_Prototipo* [Exportación PDF de un prototipo de alta fidelidad].
-
-Iturralde Velazquez, E., & Juarez Padilla, A. de J. (s. f.-b). *SPORTSGD: Boceto (Copy)* [Archivo de diseño]. Figma. https://www.figma.com/design/6k5n20lXzkAdAV046vQNsf/Boceto--Copy-?node-id=2046-3&p=f&t=ArnnZKDi80BUIyud-0
+Squeleton. (2026, 25 de septiembre). *Demostracion de SportsGD* [Video]. YouTube. https://youtu.be/efM6lr9yGcQ
 
 World Wide Web Consortium. (2024, 12 de diciembre). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/WCAG22/

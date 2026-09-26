@@ -30,6 +30,7 @@ secrets.properties
 
 # Operating-system and temporary files
 /docs/_rendered_docx/
+/tmp/
 .DS_Store
 Thumbs.db
 *.tmp

@@ -178,13 +178,26 @@ Existe un contrato `PushNotificationGateway` para una integración futura, pero 
 
 La implementación Android toma como referencia el sistema visual del prototipo: paleta verde, jerarquía tipográfica, tarjetas, formularios y navegación inferior. Algunas diferencias se mantienen cuando el comportamiento nativo o el alcance local de la demo lo requieren.
 
+## Video demostrativo
+
+[![Miniatura del video Demostracion de SportsGD](docs/assets/video/sportsgd-video-thumbnail.jpg)](https://youtu.be/efM6lr9yGcQ)
+
+- **Título:** *Demostracion de SportsGD*
+- **Canal:** Squeleton
+- **Duración:** 1 min 24 s (aprox.)
+- **Calidad máxima:** 1080p60 (Full HD)
+- **Publicación:** 25 de septiembre de 2026
+- **Enlace público:** [https://youtu.be/efM6lr9yGcQ](https://youtu.be/efM6lr9yGcQ)
+
+El recorrido muestra el acceso, el panel del entrenador, jugadores, calendario y el flujo de metas y rutinas hasta completar una sesión y actualizar el avance de una meta.
+
 ## Entregables documentales
 
 - [Reporte técnico final en PDF](docs/SPORTSGD_Reporte_Final.pdf)
 - [Reporte técnico final editable en DOCX](docs/SPORTSGD_Reporte_Final.docx)
 - [Fuente del reporte](docs/REPORT_CONTENT.md)
 
-El reporte final contiene 55 páginas, índices actualizados, 16 figuras, 16 tablas, referencias y anexos del repositorio y del diseño en Figma. Las capturas del prototipo están identificadas como diseño y las capturas de `verification/` como evidencia real de ejecución.
+El reporte final contiene 66 páginas, índices actualizados, 17 figuras, 16 tablas, referencias y anexos del repositorio, del diseño en Figma y del video público. Las capturas del prototipo están identificadas como diseño y las capturas de `verification/` como evidencia real de ejecución.
 
 ## Limitaciones conocidas
 

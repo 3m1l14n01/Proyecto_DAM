@@ -31,19 +31,8 @@ OUTPUT = ROOT / "docs" / "SPORTSGD_Reporte_Final.docx"
 INK = RGBColor(0x1E, 0x1E, 0x1E)
 MUTED = RGBColor(0x5E, 0x5A, 0x5A)
 BRAND = RGBColor(0x00, 0x7F, 0x6D)
-BRAND_DEEP = "004C41"
 SURFACE = "E6F6F4"
-TABLE_HEADER = "B0E4DD"
 LIGHT_GRAY = "F2F2F2"
-
-
-def set_cell_shading(cell, fill: str) -> None:
-    tc_pr = cell._tc.get_or_add_tcPr()
-    shd = tc_pr.find(qn("w:shd"))
-    if shd is None:
-        shd = OxmlElement("w:shd")
-        tc_pr.append(shd)
-    shd.set(qn("w:fill"), fill)
 
 
 def set_cell_margins(cell, top=90, start=90, bottom=90, end=90) -> None:
@@ -60,6 +49,46 @@ def set_cell_margins(cell, top=90, start=90, bottom=90, end=90) -> None:
             tc_mar.append(node)
         node.set(qn("w:w"), str(value))
         node.set(qn("w:type"), "dxa")
+
+
+def set_table_borders(table) -> None:
+    """Apply the restrained horizontal rules recommended for APA tables."""
+    table_properties = table._tbl.tblPr
+    existing = table_properties.find(qn("w:tblBorders"))
+    if existing is not None:
+        table_properties.remove(existing)
+
+    borders = OxmlElement("w:tblBorders")
+    for edge, value in (
+        ("top", "single"),
+        ("left", "nil"),
+        ("bottom", "single"),
+        ("right", "nil"),
+        ("insideH", "nil"),
+        ("insideV", "nil"),
+    ):
+        border = OxmlElement(f"w:{edge}")
+        border.set(qn("w:val"), value)
+        border.set(qn("w:sz"), "8")
+        border.set(qn("w:space"), "0")
+        border.set(qn("w:color"), "000000")
+        borders.append(border)
+    table_properties.append(borders)
+
+
+def set_cell_bottom_border(cell) -> None:
+    cell_properties = cell._tc.get_or_add_tcPr()
+    existing = cell_properties.find(qn("w:tcBorders"))
+    if existing is not None:
+        cell_properties.remove(existing)
+    borders = OxmlElement("w:tcBorders")
+    bottom = OxmlElement("w:bottom")
+    bottom.set(qn("w:val"), "single")
+    bottom.set(qn("w:sz"), "8")
+    bottom.set(qn("w:space"), "0")
+    bottom.set(qn("w:color"), "000000")
+    borders.append(bottom)
+    cell_properties.append(borders)
 
 
 def prevent_row_split(row) -> None:
@@ -169,8 +198,9 @@ def configure_styles(document: Document) -> None:
     normal.font.size = Pt(12)
     normal.font.color.rgb = INK
     normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.LEFT
-    normal.paragraph_format.line_spacing_rule = WD_LINE_SPACING.ONE_POINT_FIVE
-    normal.paragraph_format.space_after = Pt(6)
+    normal.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
+    normal.paragraph_format.first_line_indent = Inches(0.5)
+    normal.paragraph_format.space_after = Pt(0)
     normal.paragraph_format.widow_control = True
 
     for style_name, size, bold, italic, alignment in (
@@ -187,20 +217,24 @@ def configure_styles(document: Document) -> None:
         style.font.italic = italic
         style.font.color.rgb = INK
         style.paragraph_format.alignment = alignment
+        style.paragraph_format.first_line_indent = Inches(0)
+        style.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
         style.paragraph_format.keep_with_next = True
-        style.paragraph_format.space_before = Pt(12)
-        style.paragraph_format.space_after = Pt(6)
+        style.paragraph_format.space_before = Pt(0)
+        style.paragraph_format.space_after = Pt(0)
 
     for style_name in ("Figure Caption", "Table Caption"):
         if style_name not in styles:
             styles.add_style(style_name, WD_STYLE_TYPE.PARAGRAPH)
         style = styles[style_name]
         style.font.name = "Times New Roman"
-        style.font.size = Pt(11)
+        style.font.size = Pt(12)
         style.font.color.rgb = INK
+        style.paragraph_format.first_line_indent = Inches(0)
+        style.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
         style.paragraph_format.keep_with_next = True
-        style.paragraph_format.space_before = Pt(9)
-        style.paragraph_format.space_after = Pt(4)
+        style.paragraph_format.space_before = Pt(0)
+        style.paragraph_format.space_after = Pt(0)
 
     if "Figure Note" not in styles:
         styles.add_style("Figure Note", WD_STYLE_TYPE.PARAGRAPH)
@@ -208,8 +242,9 @@ def configure_styles(document: Document) -> None:
     note.font.name = "Times New Roman"
     note.font.size = Pt(10)
     note.font.color.rgb = MUTED
-    note.paragraph_format.line_spacing = 1.15
-    note.paragraph_format.space_after = Pt(8)
+    note.paragraph_format.first_line_indent = Inches(0)
+    note.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
+    note.paragraph_format.space_after = Pt(0)
 
     if "Code Block" not in styles:
         styles.add_style("Code Block", WD_STYLE_TYPE.PARAGRAPH)
@@ -235,6 +270,7 @@ def configure_document(document: Document) -> None:
     header = section.header
     paragraph = header.paragraphs[0]
     paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
+    paragraph.paragraph_format.first_line_indent = Inches(0)
     paragraph.paragraph_format.space_after = Pt(0)
     add_field(paragraph, " PAGE ", "1")
     for run in paragraph.runs:
@@ -242,7 +278,7 @@ def configure_document(document: Document) -> None:
         run.font.size = Pt(12)
 
     core = document.core_properties
-    core.title = "SPORTSGD — Reporte técnico final"
+    core.title = "SPORTSGD - Reporte técnico final"
     core.subject = "Desarrollo de Aplicaciones Móviles"
     core.author = "Emiliano Iturralde Velazquez; Antonio de Jesus Juarez Padilla"
     core.keywords = "SPORTSGD, Android, Kotlin, Room, Figma, UX"
@@ -254,6 +290,7 @@ def add_cover(document: Document) -> None:
         document.add_paragraph()
     university = document.add_paragraph()
     university.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    university.paragraph_format.first_line_indent = Inches(0)
     run = university.add_run("Universidad Tecmilenio")
     run.bold = True
     run.font.name = "Times New Roman"
@@ -270,6 +307,7 @@ def add_cover(document: Document) -> None:
 
     subtitle = document.add_paragraph()
     subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    subtitle.paragraph_format.first_line_indent = Inches(0)
     subtitle.add_run("Reporte técnico final").italic = True
 
     document.add_paragraph()
@@ -291,7 +329,8 @@ def add_cover(document: Document) -> None:
         set_cell_margins(cell, top=120, start=180, bottom=120, end=180)
         paragraph = cell.paragraphs[0]
         paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        paragraph.paragraph_format.line_spacing = 1.5
+        paragraph.paragraph_format.first_line_indent = Inches(0)
+        paragraph.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
         label_run = paragraph.add_run(f"{label}:\n")
         label_run.bold = True
         label_run.font.name = "Times New Roman"
@@ -306,12 +345,14 @@ def add_indexes(document: Document) -> None:
     heading = document.add_heading("Índice general", level=1)
     heading.paragraph_format.keep_with_next = True
     toc = document.add_paragraph()
+    toc.paragraph_format.first_line_indent = Inches(0)
     add_field(toc, ' TOC \\o "1-3" \\h \\z \\u ', "Actualice el índice en Word")
 
     document.add_paragraph()
     figure_heading = document.add_heading("Índice de figuras", level=2)
     figure_heading.paragraph_format.keep_with_next = True
     figure_toc = document.add_paragraph()
+    figure_toc.paragraph_format.first_line_indent = Inches(0)
     add_field(
         figure_toc,
         ' TOC \\h \\z \\t "Figure Caption,1" ',
@@ -322,6 +363,7 @@ def add_indexes(document: Document) -> None:
     table_heading = document.add_heading("Índice de tablas", level=2)
     table_heading.paragraph_format.keep_with_next = True
     table_toc = document.add_paragraph()
+    table_toc.paragraph_format.first_line_indent = Inches(0)
     add_field(
         table_toc,
         ' TOC \\h \\z \\t "Table Caption,1" ',
@@ -345,6 +387,8 @@ def add_image(document: Document, path: Path, alt: str) -> None:
     width = min(max_width, max_height * aspect)
     paragraph = document.add_paragraph()
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    paragraph.paragraph_format.first_line_indent = Inches(0)
+    paragraph.paragraph_format.space_after = Pt(0)
     paragraph.paragraph_format.keep_together = True
     run = paragraph.add_run()
     run.add_picture(str(path), width=Inches(width))
@@ -358,18 +402,19 @@ def add_table(document: Document, rows: list[list[str]]) -> None:
         return
     columns = max(len(row) for row in rows)
     table = document.add_table(rows=1, cols=columns)
-    table.style = "Table Grid"
-    table.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table.alignment = WD_TABLE_ALIGNMENT.LEFT
     table.autofit = True
+    set_table_borders(table)
     header = table.rows[0]
     repeat_table_header(header)
     for index in range(columns):
         value = rows[0][index] if index < len(rows[0]) else ""
         cell = header.cells[index]
-        set_cell_shading(cell, TABLE_HEADER)
         set_cell_margins(cell)
+        set_cell_bottom_border(cell)
         cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
         paragraph = cell.paragraphs[0]
+        paragraph.paragraph_format.first_line_indent = Inches(0)
         paragraph.paragraph_format.line_spacing = 1.0
         paragraph.paragraph_format.space_after = Pt(0)
         run = paragraph.add_run(strip_inline(value))
@@ -387,10 +432,21 @@ def add_table(document: Document, rows: list[list[str]]) -> None:
             set_cell_margins(cell)
             cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.TOP
             paragraph = cell.paragraphs[0]
+            paragraph.paragraph_format.first_line_indent = Inches(0)
             paragraph.paragraph_format.line_spacing = 1.0
             paragraph.paragraph_format.space_after = Pt(0)
             add_inline(paragraph, value, base_size=8.5)
-    document.add_paragraph().paragraph_format.space_after = Pt(0)
+
+    # Keep compact tables on one page when space permits. If a table is taller
+    # than a page, Word still breaks it safely between non-splittable rows and
+    # repeats the header instead of leaving a caption plus an orphaned header.
+    for row in table.rows[:-1]:
+        for cell in row.cells:
+            for paragraph in cell.paragraphs:
+                paragraph.paragraph_format.keep_with_next = True
+    trailing = document.add_paragraph()
+    trailing.paragraph_format.first_line_indent = Inches(0)
+    trailing.paragraph_format.space_after = Pt(0)
 
 
 def parse_table_row(line: str) -> list[str]:
@@ -440,6 +496,7 @@ def parse_markdown(document: Document, lines: list[str]) -> None:
     in_code = False
     code_lines: list[str] = []
     first_h1 = True
+    in_references = False
     paragraph_buffer: list[str] = []
 
     def flush_paragraph() -> None:
@@ -449,6 +506,11 @@ def parse_markdown(document: Document, lines: list[str]) -> None:
         text = " ".join(piece.strip() for piece in paragraph_buffer).strip()
         if text:
             paragraph = document.add_paragraph()
+            if in_references:
+                paragraph.paragraph_format.left_indent = Inches(0.5)
+                paragraph.paragraph_format.first_line_indent = Inches(-0.5)
+                paragraph.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
+                paragraph.paragraph_format.space_after = Pt(0)
             add_inline(paragraph, text)
         paragraph_buffer = []
 
@@ -491,14 +553,13 @@ def parse_markdown(document: Document, lines: list[str]) -> None:
             flush_paragraph()
             level = len(heading.group(1))
             title = strip_inline(heading.group(2))
-            starts_on_fresh_page = not (
-                title.startswith("8. Conclusiones") or title == "Referencias"
-            )
-            if level == 1 and not first_h1 and starts_on_fresh_page:
+            if level == 1 and not first_h1:
                 document.add_page_break()
             if level == 1:
                 first_h1 = False
-            document.add_heading(title, level=level)
+                in_references = title == "Referencias"
+            paragraph = document.add_heading(title, level=level)
+            paragraph.paragraph_format.first_line_indent = Inches(0)
             index += 1
             continue
 
@@ -549,6 +610,7 @@ def parse_markdown(document: Document, lines: list[str]) -> None:
                 paragraph.paragraph_format.left_indent = Inches(0.25 * indentation)
                 paragraph.paragraph_format.first_line_indent = Inches(0)
                 add_inline(paragraph, list_item.group(3))
+            paragraph.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
             paragraph.paragraph_format.space_after = Pt(0)
             index += 1
             continue
@@ -562,6 +624,9 @@ def parse_markdown(document: Document, lines: list[str]) -> None:
             paragraph = document.add_paragraph()
             paragraph.paragraph_format.left_indent = Inches(0.3)
             paragraph.paragraph_format.right_indent = Inches(0.2)
+            paragraph.paragraph_format.first_line_indent = Inches(0)
+            paragraph.paragraph_format.line_spacing_rule = WD_LINE_SPACING.DOUBLE
+            paragraph.paragraph_format.space_after = Pt(0)
             p_pr = paragraph._p.get_or_add_pPr()
             shading = OxmlElement("w:shd")
             shading.set(qn("w:fill"), SURFACE)
@@ -585,7 +650,12 @@ def parse_markdown(document: Document, lines: list[str]) -> None:
 
 
 def extract_segments(lines: list[str]) -> tuple[list[str], list[str]]:
-    criterion_start = next(i for i, line in enumerate(lines) if line.startswith("## Criterio de evidencia"))
+    criterion_start = next(
+        i
+        for i, line in enumerate(lines)
+        if line.startswith("## Criterio de evidencia")
+        or line.startswith("## Alcance y criterios de validación")
+    )
     index_start = next(i for i, line in enumerate(lines) if line.startswith("# Índice general"))
     main_start = next(i for i, line in enumerate(lines) if line.startswith("# 1. Introducción"))
     checklist_start = next(
